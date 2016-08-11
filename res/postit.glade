@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<interface>
+  <requires lib="gtk+" version="2.24"/>
+  <!-- interface-naming-policy project-wide -->
+  <object class="GtkWindow" id="postItWindow">
+    <property name="can_focus">False</property>
+    <property name="default_width">220</property>
+    <property name="default_height">235</property>
+    <property name="icon">egg.png</property>
+    <child>
+      <object class="GtkFixed" id="fixed1">
+        <property name="visible">True</property>
+        <property name="can_focus">False</property>
+        <child>
+          <object class="GtkButton" id="buttonDo">
+            <property name="label" translatable="yes">新建</property>
+            <property name="use_action_appearance">False</property>
+            <property name="width_request">100</property>
+            <property name="height_request">30</property>
+            <property name="visible">True</property>
+            <property name="can_focus">True</property>
+            <property name="receives_default">True</property>
+            <property name="focus_on_click">False</property>
+            <signal name="clicked" handler="on_buttonDo_clicked" swapped="no"/>
+          </object>
+          <packing>
+            <property name="x">120</property>
+            <property name="y">230</property>
+          </packing>
+        </child>
+        <child>
+          <object class="GtkTextView" id="tvInput">
+            <property name="width_request">1</property>
+            <property name="height_request">1</property>
+            <property name="can_focus">True</property>
+            <property name="wrap_mode">word</property>
+            <signal name="key-press-event" handler="on_tvInput_key_press_event" swapped="no"/>
+          </object>
+        </child>
+        <child>
+          <object class="GtkColorButton" id="colorbutton">
+            <property name="use_action_appearance">False</property>
+            <property name="width_request">50</property>
+            <property name="height_request">30</property>
+            <property name="visible">True</property>
+            <property name="can_focus">True</property>
+            <property name="receives_default">True</property>
+            <property name="focus_on_click">False</property>
+            <property name="color">#dd21ffff1905</property>
+            <signal name="color-set" handler="on_colorbutton_color_set" swapped="no"/>
+          </object>
+          <packing>
+            <property name="y">230</property>
+          </packing>
+        </child>
+        <child>
+          <object class="GtkButton" id="buttonEdit">
+            <property name="label" translatable="yes">点击编辑</property>
+            <property name="use_action_appearance">False</property>
+            <property name="width_request">220</property>
+            <property name="height_request">220</property>
+            <property name="visible">True</property>
+            <property name="can_focus">True</property>
+            <property name="receives_default">True</property>
+            <property name="focus_on_click">False</property>
+            <signal name="clicked" handler="on_buttonEdit_clicked" swapped="no"/>
+          </object>
+        </child>
+      </object>
+    </child>
+  </object>
+</interface>
